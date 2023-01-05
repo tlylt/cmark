@@ -1,7 +1,7 @@
 {
-  "name": "@tlylt/rmark",
+  "name": "@tlylt/cmark",
   "version": "1.0.0",
-  "description": "A simple regex-based toy Markdown parser written in TypeScript",
+  "description": "A simple compiler-style toy Markdown parser written in TypeScript",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -15,19 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tlylt/rmark.git"
+    "url": "git+https://github.com/tlylt/cmark.git"
   },
   "keywords": [
     "markdown",
-    "parser",
-    "regex"
+    "parser"
   ],
   "author": "tlylt <liu_yongliang@hotmail.com> (https://github.com/tlylt)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tlylt/rmark/issues"
+    "url": "https://github.com/tlylt/cmark/issues"
   },
-  "homepage": "https://github.com/tlylt/rmark#readme",
+  "homepage": "https://github.com/tlylt/cmark#readme",
   "devDependencies": {
     "@types/jest": "^29.2.5",
     "jest": "^29.3.1",
