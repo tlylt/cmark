@@ -5,6 +5,7 @@ enum TokenType {
   UNDERSCORE = 'UNDERSCORE',
   STAR = 'STAR',
   NEWLINE = 'NEWLINE',
+  HASH = 'HASH',
 }
 
 // TokenType Reverse Lookup
@@ -12,6 +13,7 @@ export const TokenTypeLookup: { [key: string]: TokenType } = {
   _: TokenType.UNDERSCORE, // inline
   '*': TokenType.STAR, // inline
   '\n': TokenType.NEWLINE,
+  '#': TokenType.HASH,
 };
 
 export class Token {

@@ -3,21 +3,20 @@ import { Token } from './Token';
 export class TokenList {
   constructor(public tokens: Token[]) {}
 
-  // make TokenList iterable like an array
+  /**
+   * Make TokenList iterable like an array
+   */
   [Symbol.iterator]() {
     return this.tokens[Symbol.iterator]();
   }
 
   public validateAny(...typeSequences: string[][]) {
-    for (const typeSequence of typeSequences) {
-      if (this.validate(...typeSequence)) {
-        return true;
-      }
-    }
-    return false;
+    return typeSequences.some((typeSequence) => this.validate(...typeSequence));
   }
 
-  // strictly same sequence of tokens
+  /**
+   * Strictly same sequence of tokens
+   */
   public validate(...typeSequence: string[]) {
     if (typeSequence.length > this.tokens.length) {
       return false;
@@ -29,7 +28,9 @@ export class TokenList {
     return this.offset(start).validate(...typeSequence);
   }
 
-  // grab the first n tokens
+  /**
+   * Grab the first n tokens
+   */
   public grab(amount: number): Token[] {
     if (amount > this.tokens.length) {
       throw new Error('Invalid amount requested');
@@ -37,7 +38,9 @@ export class TokenList {
     return this.tokens.splice(0, amount);
   }
 
-  // grab the token list from the start index
+  /**
+   * Grab the token list from the start index
+   */
   public offset(start: number): TokenList {
     return start === 0 ? this : new TokenList(this.tokens.slice(start));
   }

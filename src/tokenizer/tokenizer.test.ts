@@ -1,7 +1,7 @@
 import { Tokenizer } from './Tokenizer';
 import { Token } from './Token';
 
-describe('testing tokenizer', () => {
+describe('testing Tokenizer', () => {
   test('should tokenize empty string to EOF', () => {
     expect(new Tokenizer().tokenizeToArr('')).toEqual([Token.endOfFile()]);
   });
@@ -24,6 +24,13 @@ describe('testing tokenizer', () => {
       new Token('STAR', '*'),
       new Token('TEXT', 'Hello World'),
       new Token('STAR', '*'),
+      Token.endOfFile(),
+    ]);
+  });
+  test('should tokenize hash', () => {
+    expect(new Tokenizer().tokenizeToArr('# Hello World')).toEqual([
+      new Token('HASH', '#'),
+      new Token('TEXT', ' Hello World'),
       Token.endOfFile(),
     ]);
   });
